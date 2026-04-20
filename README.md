@@ -21,7 +21,7 @@ This is a solution to the [Todo app challenge on Frontend Mentor](https://www.fr
 Users should be able to:
 
 - See the size of the elements adjust based on their device's screen size
-- Perform mathematical operations like addition, subtraction, multiplication, and division
+- CRUD: create, read, update, delete tasks
 - Adjust the color theme based on their preference
 - **Bonus**: Have their initial theme preference checked using `prefers-color-scheme` and have any additional changes saved in the browser
 
