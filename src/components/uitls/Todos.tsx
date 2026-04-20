@@ -9,7 +9,7 @@ export const todos = [
   },
   {
     id: 3,
-    todo: 'Play Ping-Pong with Stefanuta and be yourself',
+    todo: 'Play Ping-Pong
   },
   {
     id: 4,
