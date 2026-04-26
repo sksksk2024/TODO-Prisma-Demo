@@ -55,7 +55,19 @@ One of the best things about Prisma is its seamless integration into my workflow
 
 🔥
 
-For my future projects, I plan to switch to **PostgreSQL** to take full advantage of its **advanced types and scalability features**. Additionally, I aim to improve my proficiency with my tech stack as a whole, since I'll be working on numerous **personal and career-based projects**.
+-> For my future projects, I plan to switch to **PostgreSQL** to take full advantage of its **advanced types and scalability features**. Additionally, I aim to improve my proficiency with my tech stack as a whole, since I'll be working on numerous **personal and career-based projects**.
+-> To make an **daily refresh** and to **check if it is daily** kind of attributes, that will be added as labels in the todo ui, for enabling editing, and in the current schema, so it saves:
+```
+model Todo {
+  id        String   @id @default(uuid())
+  input     String
+  done      Boolean  @default(false)
+  createdAt DateTime @default(now())
+  order     Int      @default(0)
+  // Viitoare implementare pentru Daily Refresh:
+  // isDaily   Boolean  @default(false)
+}
+```
 
 ### My Tech Stack
 
