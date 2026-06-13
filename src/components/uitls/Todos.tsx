@@ -1,18 +1,18 @@
 export const todos = [
   {
     id: 1,
-    todo: 'Wash dishes',
+    todo: "Wash dishes",
   },
   {
     id: 2,
-    todo: 'Workout',
+    todo: "Workout",
   },
   {
     id: 3,
-    todo: 'Play Ping-Pong
+    todo: "Play Ping-Pong",
   },
   {
     id: 4,
-    todo: 'Finish Todo App',
+    todo: "Finish Todo App",
   },
 ];
