@@ -1,8 +1,10 @@
 // page.tsx (Server Component)
-import Footer from '@/components/Footer';
-import Header from '@/components/Header';
-import TodoList, { Todo } from '@/components/TodoList';
-import { db } from '@/utils/db';
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import TodoList, { Todo } from "@/components/TodoList";
+import { db } from "@/utils/db";
+
+export const dynamic = "force-dynamic";
 
 const Home = async () => {
   const data = (await db.todo.findMany({
@@ -12,7 +14,7 @@ const Home = async () => {
       createdAt: true,
     },
     orderBy: {
-      id: 'desc',
+      id: "desc",
     },
   })) as Todo[];
 
