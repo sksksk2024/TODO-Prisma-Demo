@@ -8,31 +8,6 @@ import { db } from "@/utils/db";
 export const dynamic = "force-dynamic";
 
 const Home = async () => {
-  // const data = (await db.todo.findMany({
-  //   select: {
-  //     id: true,
-  //     input: true,
-  //     createdAt: true,
-  //   },
-  //   orderBy: {
-  //     id: "desc",
-  //   },
-  // })) as Todo[];
-
-  // // Ensure all todos have 'done' explicitly set
-  // const todosWithDone: Todo[] = data.map((todo) => ({
-  //   ...todo,
-  //   done: todo.done ?? false, // Defaults to false if missing
-  // }));
-
-  // return (
-  //   <>
-  //     <Header />
-  //     <TodoList initialTodos={todosWithDone} />
-  //     <Footer />
-  //   </>
-  // );
-
   try {
     // Încercăm să tragem datele din Supabase
     const data = (await db.todo.findMany({
@@ -46,11 +21,18 @@ const Home = async () => {
       },
     })) as Todo[];
 
+    // Ensure all todos have 'done' explicitly set
+    const todosWithDone: Todo[] = data.map((todo) => ({
+      ...todo,
+      done: todo.done ?? false, // Defaults to false if missing
+    }));
+
     return (
-      <div className="p-10">
-        <h1>Conexiune Reușită!</h1>
-        <pre>{JSON.stringify(data, null, 2)}</pre>
-      </div>
+      <>
+        <Header />
+        <TodoList initialTodos={todosWithDone} />
+        <Footer />
+      </>
     );
   } catch (error: any) {
     // Dacă pică ceva, afișăm eroarea MARE și CLAR pe ecran
