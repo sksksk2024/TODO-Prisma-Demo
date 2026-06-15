@@ -34,7 +34,9 @@ const Home = async () => {
         <Footer />
       </>
     );
-  } catch (error: any) {
+  } catch (err) {
+    const error = err as Error & { code?: string };
+
     // Dacă pică ceva, afișăm eroarea MARE și CLAR pe ecran
     return (
       <div
@@ -50,7 +52,7 @@ const Home = async () => {
           <strong>Mesaj:</strong> {error.message}
         </p>
         <p>
-          <strong>Cod Prisma:</strong> {error.code}
+          <strong>Cod Prisma:</strong> {error.code || "N/A"}
         </p>
         <pre style={{ whiteSpace: "pre-wrap", marginTop: "20px" }}>
           {error.stack}
